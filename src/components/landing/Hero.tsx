@@ -15,7 +15,8 @@ const Hero: React.FC = () => {
     const handleClick = () => {
         if (user) {
             // Redirect to dashboard based on user role
-            navigate(`/${role}/dashboard`);
+            if(role === 'teacher')navigate("/faculty/dashboard")
+            else navigate(`/${role}/dashboard`);
         } else {
             // Redirect to login if not logged in
             navigate("/login");
